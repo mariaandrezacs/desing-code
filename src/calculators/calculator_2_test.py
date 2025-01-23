@@ -12,4 +12,9 @@ def test_calculate():
     mock_request = MockRequest({"numbers": [2.12, 4.62, 1.32]})
 
     calculate_2 = Calculator2()
-    calculate_2.calculate(mock_request)
+    formated_response = calculate_2.calculate(mock_request)
+    print()
+    print(formated_response)
+
+    assert isinstance(formated_response, dict)
+    assert formated_response == {"data": {"Calculator": 2, "result": 0.08}}
